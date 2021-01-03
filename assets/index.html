@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalman Simulation</title>
+    <style>
+        #container {
+            display: flex;
+        }
+        #form {
+            flex-shrink: 0;
+        }
+        #plot {
+            flex-grow: 1;
+        }
+        #plot img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+
+<body>
+<h1>Kalman Simulation</h1>
+
+<div id="container">
+<form id="form">
+    <div>
+        <div>Initial Guess (Position in meters, Velocity in m/s)</div>
+        <div><input id="initial_guess_position" value="50"/> <input id="initial_guess_velocity" value="15"/></div>
+    </div>
+
+    <div>
+        <div>Initial State Covariance Matrix</div>
+        <div><input id="initial_guess_pos_variance" value="400"/> <input id="initial_guess_covariance1" value="0"/></div>
+        <div><input id="initial_guess_covariance2" value="0"/> <input id="initial_guess_vel_variance" value="100"/></div>
+    </div>
+
+    <div>
+        <div>Delta Time in seconds</div>
+        <div><input id="delta_time" value="5"/></div>
+    </div>
+
+    <div>
+        <div>Measurement Covariance Matrix</div>
+        <div><input id="measurement_pos_variance" value="25"/> <input id="measurement_covariance1" value="0"/></div>
+        <div><input id="measurement_covariance2" value="0"/> <input id="measurement_vel_variance" value="3"/></div>
+    </div>
+
+    <div>
+        <div>Measurements (Position in meters, Velocity in m/s)</div>
+        <div>
+            <button id="remove" type="button">-</button>
+            <button id="add" type="button">+</button>
+        </div>
+        <div id="measurements">
+            <div><input value="128"/> <input value="13"/></div>
+            <div><input value="201"/> <input value="11"/></div>
+            <div><input value="277"/> <input value="14"/></div>
+            <div><input value="349"/> <input value="16"/></div>
+            <div><input value="423"/> <input value="16"/></div>
+        </div>
+    </div>
+
+    <button id="start" type="button">Start</button>
+
+    <br/>
+    <br/>
+    <br/>
+    <button type="reset">Reset</button>
+</form>
+
+<div id="plot"></div>
+</div>
+<script src="index.js"></script>
+</body>
+
+</html>
