@@ -2,28 +2,46 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_output(plot_inputs, plots_uncertainties, measurements):
-    steps = np.arange(1, len(plot_inputs[0]) + 1)
+def plot_output(plot_estimates, plot_uncertainties, plot_measurements):
+    steps = np.arange(1, len(plot_estimates[0]) + 1)
 
     plt.style.use('seaborn')
-    fig, axs = plt.subplots(2, 1, figsize=(15, 15))
+    fig, axs = plt.subplots(4, 1, figsize=(10, 20), sharex='all',
+                            gridspec_kw={'height_ratios': [3.5, 1, 1, 1]}, constrained_layout=True)
+    fig.suptitle("Kalman filter simulation output", fontsize=25)
 
-    axs[0].errorbar(steps, plot_inputs[0], yerr=plots_uncertainties[0],
-                    linestyle=':', marker='o', markersize=6, color='black', ecolor='black', elinewidth=2,
-                    fmt='.k', label='estimated position')
-    axs[0].scatter(steps, measurements[0], color='r', label='measurements')
-    axs[0].set_xticks(steps)
-    axs[0].set_ylabel('position (m)')
-    axs[0].legend(bbox_to_anchor=(0.98, 0.2), fontsize=12)
+    axs[0].plot(steps, plot_estimates[0], linestyle=':', marker='o', markersize=6, color='black',
+                label='estimated position')
+    axs[0].scatter(steps, plot_measurements[0], color='r', label='measured position')
+    axs[0].set_ylabel('position (m)', fontsize=12)
+    axs[0].legend(bbox_to_anchor=(0.98, -0.01), fontsize=14)
+    axs[0].set_title('Position', fontsize=15, x=0.5, y=0.99)
 
-    axs[1].errorbar(steps, plot_inputs[1], yerr=plots_uncertainties[1],
-                    linestyle=':', marker='o', markersize=6, color='black', ecolor='black', elinewidth=2,
-                    fmt='.k', label='estimated velocity')
-    axs[1].scatter(steps, measurements[1], color='r', label='measurements')
-    axs[1].set_xticks(steps)
-    axs[1].set_xlabel('steps')
-    axs[1].set_ylabel('velocity (m/s)')
-    axs[1].legend(bbox_to_anchor=(0.98, 0.9), fontsize=12)
+    ###
+
+    axs[1].plot(steps, plot_uncertainties[0],
+                linestyle=':', marker='o', markersize=6, color='orange')
+    axs[1].set_ylabel('position uncertainty (m)', fontsize=12)
+    axs[1].set_title('Position  Uncertainty', fontsize=15, x=0.5, y=0.99)
+
+    ###
+
+    axs[2].plot(steps, plot_estimates[1],
+                linestyle=':', marker='o', markersize=6, color='black',
+                label='estimated velocity')
+    axs[2].scatter(steps, plot_measurements[1], color='r', label='measured velocity')
+    axs[2].set_ylabel('velocity (m/s)', fontsize=12)
+    axs[2].legend(bbox_to_anchor=(0.98, -0.01), fontsize=14)
+    axs[2].set_title('Velocity', fontsize=15, x=0.5, y=0.99)
+
+    ###
+
+    axs[3].plot(steps, plot_uncertainties[1],
+                linestyle=':', marker='o', markersize=6, color='orange')
+    axs[3].set_ylabel('velocity uncertainty (m/s)', fontsize=12)
+    axs[3].set_title('Velocity Uncertainty', fontsize=15, x=0.5, y=0.99)
+
+    axs[3].set_xticks(steps)
+    axs[3].set_xlabel('steps', fontsize=14)
 
     return fig
-

@@ -5,12 +5,12 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from parse_input_parameters import parse_parameters, parse_plot_inputs, parse_plot_uncertainty, parse_plot_measurements
 from kalman_simulation import simulation
 
-app = Flask(__name__, static_folder='assets', static_url_path='')
+app = Flask(__name__, static_folder='../assets', static_url_path='')
 
 
 @app.route('/')
 def home():
-    return send_file('assets/index.html')
+    return send_file('../assets/index.html')
 
 
 @app.route('/plot', methods=['POST'])
