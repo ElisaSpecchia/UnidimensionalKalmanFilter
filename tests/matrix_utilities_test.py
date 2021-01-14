@@ -18,9 +18,3 @@ def test_is_not_symmetric():
 
     assert utilities.is_symmetric(matrix) is False
 
-
-def test_is_not_square():
-    matrix = np.array([[0, 1], [5, 1], [5, 1]])
-
-    assert utilities.is_symmetric(matrix) is False
-

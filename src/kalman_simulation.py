@@ -1,5 +1,6 @@
 import numpy as np
 import kalman_equations_matrix_form as kalman
+from matrix_utilities import is_symmetric
 
 observation_matrix = np.array([[1, 0], [0, 1]])
 
@@ -20,6 +21,9 @@ def simulation(initial_state_guess, initial_state_cov_matrix, measurements, meas
                state_transition_matrix):
     output_simulation = []
     output_simulation_uncertainty = []
+
+    if is_symmetric(initial_state_cov_matrix) is False or is_symmetric(measurement_cov_matrix) is False:
+        raise ValueError('Covariance matrices are not symmetric')
 
     # extrapolation of initial state guess and covariance matrix
     previous_state_vector = np.array([extrapolate_initial_state_guess(initial_state_guess, state_transition_matrix)]).T

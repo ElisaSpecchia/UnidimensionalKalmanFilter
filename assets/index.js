@@ -80,6 +80,7 @@ function collect_input_parameters() {
 function init_simulation_button() {
     start.addEventListener("click", async function () {
         const input_parameters = collect_input_parameters()
+        const plot_container = document.getElementById('plot')
 
         // pass the input parameters as JSON to the server and get a response
         const response = await fetch('/plot', {
@@ -95,7 +96,6 @@ function init_simulation_button() {
         */
         const plot = await response.blob()
         const plot_url = URL.createObjectURL(plot)
-        const plot_container = document.getElementById('plot')
         plot_container.innerHTML = `<img src="${plot_url}">`
     })
 }

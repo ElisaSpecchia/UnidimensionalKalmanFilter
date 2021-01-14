@@ -189,6 +189,8 @@ The two covariance matrices play an important role in this program. For example,
 of the measurements is high the estimation algorithm is expected to give more weight to the dynamic 
 model and vice versa. 
 
+Make sure both covariance matrices are symmetric.
+
 Considering an object with constant velocity, observation matrix (H) and 
 state transition matrix (F) are defined as:
 
