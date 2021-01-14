@@ -1,6 +1,5 @@
 import numpy as np
 import kalman_equations_matrix_form as kalman
-import matrix_utilities as utilities
 import pytest
 
 

@@ -1,5 +1,4 @@
 import numpy as np
-import matrix_utilities as utilities
 
 
 def state_extrapolation(current_state_vector, state_transition_matrix):

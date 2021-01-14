@@ -1,10 +1,10 @@
 # Unidimensional Kalman Filter Simulation
+This is a web application for executing simulations with the Kalman filter and, for
+simplicity, only one-dimensional systems are considered.
 The Kalman filter is a sequential estimation process that provides an optimal estimate 
 of the evolution of a system, given noisy measurements and a limited knowledge about the system. 
 The standard filter is designed for linear systems and is now widely 
 used in many different applications, including Tracking Targets, navigation systems and much more.
-For simplicity, this particular simulation concerns the application of the kalman filter in 
-a one-dimensional system.
 
 ## Getting started
 The following requirements are needed to start the unidimensional Kalman filter simulation program:
