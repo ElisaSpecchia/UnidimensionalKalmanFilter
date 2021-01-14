@@ -27,24 +27,24 @@
 <form id="form">
     <div>
         <div>Initial Guess (Position in meters, Velocity in m/s)</div>
-        <div><input id="initial_guess_position" value="50"/> <input id="initial_guess_velocity" value="15"/></div>
+        <div><input id="initial_guess_position" value="0"/> <input id="initial_guess_velocity" value="4"/></div>
     </div>
 
     <div>
         <div>Initial State Covariance Matrix</div>
-        <div><input id="initial_guess_pos_variance" value="400"/> <input id="initial_guess_covariance1" value="0"/></div>
-        <div><input id="initial_guess_covariance2" value="0"/> <input id="initial_guess_vel_variance" value="100"/></div>
+        <div><input id="initial_guess_pos_variance" value="1"/> <input id="initial_guess_covariance1" value="0"/></div>
+        <div><input id="initial_guess_covariance2" value="0"/> <input id="initial_guess_vel_variance" value="2"/></div>
     </div>
 
     <div>
         <div>Delta Time in seconds</div>
-        <div><input id="delta_time" value="5"/></div>
+        <div><input id="delta_time" value="10"/></div>
     </div>
 
     <div>
         <div>Measurement Covariance Matrix</div>
-        <div><input id="measurement_pos_variance" value="25"/> <input id="measurement_covariance1" value="0"/></div>
-        <div><input id="measurement_covariance2" value="0"/> <input id="measurement_vel_variance" value="3"/></div>
+        <div><input id="measurement_pos_variance" value="100"/> <input id="measurement_covariance1" value="0"/></div>
+        <div><input id="measurement_covariance2" value="0"/> <input id="measurement_vel_variance" value="1"/></div>
     </div>
 
     <div>
@@ -54,11 +54,11 @@
             <button id="add" type="button">+</button>
         </div>
         <div id="measurements">
-            <div><input value="128"/> <input value="13"/></div>
-            <div><input value="201"/> <input value="11"/></div>
-            <div><input value="277"/> <input value="14"/></div>
-            <div><input value="349"/> <input value="16"/></div>
-            <div><input value="423"/> <input value="16"/></div>
+            <div><input value="49"/> <input value="3.8"/></div>
+            <div><input value="71"/> <input value="4.6"/></div>
+            <div><input value="128"/> <input value="3.4"/></div>
+            <div><input value="173"/> <input value="3.8"/></div>
+            <div><input value="209"/> <input value="4.2"/></div>
         </div>
     </div>
 

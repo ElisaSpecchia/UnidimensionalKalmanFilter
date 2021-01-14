@@ -7,7 +7,7 @@ def plot_output(plot_estimates, plot_uncertainties, plot_measurements):
 
     plt.style.use('seaborn')
     fig, axs = plt.subplots(4, 1, figsize=(10, 20), sharex='all',
-                            gridspec_kw={'height_ratios': [3.5, 1, 1, 1]}, constrained_layout=True)
+                            gridspec_kw={'height_ratios': [2, 1.5, 1, 1]}, constrained_layout=True)
     fig.suptitle("Kalman filter simulation output", fontsize=25)
 
     axs[0].plot(steps, plot_estimates[0], linestyle=':', marker='o', markersize=6, color='black',
