@@ -18,11 +18,11 @@ def parse_simulation_inputs(parameters_object):
 
 
 def parse_plot_estimates(estimate_array):
-    """parse the output of the simulation,
-    in order to create the plot.
-    Define an array of two arrays:
-    the first one contains all position estimates,
-    the second one contains all velocity estimates."""
+    """Parse the output of the simulation, to create the plot.
+    Define a list formed of two lists:
+    put all position estimates in the first list,
+    put all velocity estimates in the second list."""
+
     plot_inputs = []
     for i in range(len(estimate_array)):
         for j in range(len(estimate_array[i])):
@@ -33,11 +33,10 @@ def parse_plot_estimates(estimate_array):
 
 
 def parse_plot_uncertainty(uncertainty_array):
-    """parse the output of the simulation,
-    in order to create the plot.
-    Define an array of two arrays:
-    the first one contains all position uncertainties (standard deviation),
-    the second one contains all velocity uncertainties (standard deviation)."""
+    """Parse the output of the simulation, to create the plot.
+    Define a list formed of two lists:
+    put all position uncertainties (standard deviation) in the first list,
+    put all velocity uncertainties (standard deviation) in the second list."""
     plot_uncertainties = []
     for i in range(len(uncertainty_array)):
         for j in range(len(uncertainty_array[i])):
@@ -50,11 +49,10 @@ def parse_plot_uncertainty(uncertainty_array):
 
 
 def parse_plot_measurements(estimate_array):
-    """parse the measurements,
-    in order to create the plot.
-    Define an array of two arrays:
-    the first one contains all position measurements,
-    the second one contains all velocity measurements."""
+    """Parse the measurements, to create the plot.
+    Define a list formed of two lists:
+    put all position measurements in the first list,
+    put all velocity measurements in the second list."""
     plot_inputs = []
     for i in range(len(estimate_array)):
         for j in range(len(estimate_array[i])):
