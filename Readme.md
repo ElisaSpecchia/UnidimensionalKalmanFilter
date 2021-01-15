@@ -81,7 +81,7 @@ measurement covariance matrix. This is achieved through a continuous two-step pr
 1. propagate the state and covariance with the dynamic model from one time step to the next,
 2. perform a measurement update at each time step.
 
-###### Focus on Notation: 
+##### Notation: 
 In the following equations, the State Vector and Estimate Uncertainty have two subscripts:
 * the first one corresponds to the time step of the estimate,
 * the second one is the time step of the last measurement considered to provide the same estimate.
@@ -89,6 +89,7 @@ These two subscripts together identify which estimates have already been updated
 
 Example:
 (n,n) indicates the estimate at time step n, updated with the measurement at the same time step.
+
 (n+1,n) indicates the predicted estimate at time step n+1, prior to the update step. 
 
 #### Propagate Step
