@@ -1,6 +1,6 @@
 # Unidimensional Kalman Filter Simulation
-This is a web application designed for Kalman filter simulations, to track any 
-object moving in one dimension with constant velocity. 
+This is a web application designed to track any object moving in one dimension 
+with constant velocity, using the Kalman filter. 
 
 The Kalman filter is a sequential estimation process that provides an optimal estimate 
 of the evolution of a system, given noisy measurements and a limited knowledge about the system. 
@@ -39,8 +39,7 @@ All required parameters are:
 * Measurements of Position and Velocity, 
 * Measurement Covariance Matrix.
 
-(Details on the operation of the kalman filter and parameter settings 
-are given in the following documentation). 
+(Details on Kalman filter operation and parameter settings can be found in the following documentation).
 
 The number of measurements can vary from a minimum of 5: the (+) button adds more measurements
 while the (-) button removes them. To restore the default parameters, press the reset button.
