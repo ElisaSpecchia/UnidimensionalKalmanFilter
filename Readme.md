@@ -1,9 +1,10 @@
 # Unidimensional Kalman Filter Simulation
-This is a web application for executing simulations with the Kalman filter and, for
+This is a web application designed for Kalman filter simulations: for
 simplicity, only one-dimensional systems are considered.
+
 The Kalman filter is a sequential estimation process that provides an optimal estimate 
 of the evolution of a system, given noisy measurements and a limited knowledge about the system. 
-The standard filter is designed for linear systems and is now widely 
+The standard filter is designed for use in linear systems and is widely 
 used in many different applications, including Tracking Targets, navigation systems and much more.
 
 ## Getting started
@@ -26,16 +27,16 @@ conda activate kalman
 python src/main.py
 ```
 
-The link shown in the console (http://127.0.0.1:5000/) opens a web page   
-with an interface needed to set the simulation parameters.
+The link shown in the console (http://127.0.0.1:5000/) opens a web page with an interface 
+consisting of several boxes: each box accepts a specific input parameter. 
 
 <img src="image_equations/interface.JPG" />
 
-The required parameters are:
-* Initial Guess of Position and velocity,
+All required parameters are:
+* Initial Guess of Position and Velocity,
 * Initial State Covariance Matrix,
 * Delta Time,
-* Measurements of Position and velocity, 
+* Measurements of Position and Velocity, 
 * Measurement Covariance Matrix.
 
 (Details on the operation of the kalman filter and parameter settings 
@@ -44,8 +45,8 @@ are given in the following documentation).
 The number of measurements can vary from a minimum of 5: the (+) button adds more measurements
 while the (-) button removes them. To restore the default parameters, press the reset button.
  
-The simulation can be run by pressing the start button: the output is a plot showing 
-the estimated position, speed and their uncertainties. 
+The simulation can be run by clicking on the start button: the output is a plot showing 
+the estimated position and velocity and their uncertainties. 
 
 It is important to make sure that none of the boxes are empty, before starting the simulation. 
 
@@ -85,12 +86,13 @@ measurement covariance matrix. This is achieved through a continuous two-step pr
 In the following equations, the State Vector and Estimate Uncertainty have two subscripts:
 * the first one corresponds to the time step of the estimate,
 * the second one is the time step of the last measurement considered to provide the same estimate.
+
 These two subscripts together identify which estimates have already been updated.
 
 Example:
-(n,n) indicates the estimate at time step n, updated with the measurement at the same time step.
 
-(n+1,n) indicates the predicted estimate at time step n+1, prior to the update step. 
+* (n,n) indicates the estimate at time step n, updated with the measurement at the same time step.
+* (n+1,n) indicates the predicted estimate at time step n+1, prior to the update step. 
 
 #### Propagate Step
 During the propagate step, a mathematical model is applied over a specified period of time 
@@ -122,10 +124,11 @@ using linear transformations:
 
 The uncertainty in each of the measurements is defined by the measurement covariance matrix (R):
 the Kalman filter assumes that the measurement errors in the system are Gaussian and zero-mean.
-Once the measurement vector, observation matrix, and measurement covariance matrix 
+Once the measurement vector, observation matrix and measurement covariance matrix 
 are available, the propagated state vector and state covariance matrix can be corrected 
 with this measurement information to provide an updated estimate of the states and state covariance.
-The combination of measurements and predictions requires a matrix known as the Kalman gain (K),  
+
+The combination of measurements and predictions requires a matrix known as the Kalman gain (K), 
 in order to weight the measurements by comparing the uncertainty of the measurement
 vector with the current uncertainty of the state vector (predicted at the previous state). 
 The Kalman gain is designed such that it minimizes the variance of the state estimates.
@@ -150,7 +153,7 @@ next time step. When the measurement is received, the Kalman filter updates the 
 its uncertainty. As well, the updated estimate is used to predict the 
 next state, and so on. 
 
-To summarize, the application of a Kalman filter requires several input parameters:
+So, the application of a Kalman filter requires several input parameters:
 * Initial state estimate,
 * Initial state covariance matrix,
 * State transition matrix,
@@ -167,8 +170,8 @@ https://www.kalmanfilter.net/default.aspx
 
 
 ## Unidimensional simulation of the motion of a whale
-The program shown here uses the kalman filter to track the movement of any object in 
-one-dimensional motion with constant velocity, as long as both position and velocity are measured.
+The program shown here uses the kalman filter to track the movement of any object at constant velocity
+in one-dimensional systems, as long as both position and velocity are measured.
 For example, let's track a whale just equipped with a GPS receiver.
 
 In this particular systems, the estimated state vector (X) includes position and velocity, 
@@ -192,7 +195,7 @@ model and vice versa.
 
 Make sure both covariance matrices are symmetric.
 
-Considering an object with constant velocity, observation matrix (H) and 
+Considering an object at constant velocity, observation matrix (H) and 
 state transition matrix (F) are defined as:
 
 <img src="image_equations/observation_matrix.JPG" />
