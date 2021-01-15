@@ -1,11 +1,11 @@
 # Unidimensional Kalman Filter Simulation
-This is a web application designed for Kalman filter simulations: for
-simplicity, only one-dimensional systems are considered.
+This is a web application designed for Kalman filter simulations, to track any 
+object moving in one dimension with constant velocity. 
 
 The Kalman filter is a sequential estimation process that provides an optimal estimate 
 of the evolution of a system, given noisy measurements and a limited knowledge about the system. 
-The standard filter is designed for use in linear systems and is widely 
-used in many different applications, including Tracking Targets, navigation systems and much more.
+It is widely used in many different applications, including Tracking Targets, navigation 
+systems and much more.
 
 ## Getting started
 The following requirements are needed to start the unidimensional Kalman filter simulation program:
@@ -169,12 +169,12 @@ A detailed description of the Kalman filter can be found here:
 https://www.kalmanfilter.net/default.aspx
 
 
-## Unidimensional simulation of the motion of a whale
-The program shown here uses the kalman filter to track the movement of any object at constant velocity
-in one-dimensional systems, as long as both position and velocity are measured.
+## Unidimensional simulation for tracking a moving object
+The program shown here uses the kalman filter to track any object moving 
+in one dimension with constant velocity, as long as both position and velocity are measured.
 For example, let's track a whale just equipped with a GPS receiver.
 
-In this particular systems, the estimated state vector (X) includes position and velocity, 
+In these particular systems, the estimated state vector (X) includes both position and velocity, 
 while the state covariance matrix (P) combines the variances associated with 
 each of the state estimates and the correlation between the position and velocity errors:
 
