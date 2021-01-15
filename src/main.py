@@ -2,7 +2,7 @@ from flask import Flask, send_file, Response, request
 from visualization import plot_output
 import io
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from parse_input_parameters import parse_simulation_inputs, parse_plot_inputs, parse_plot_uncertainty, parse_plot_measurements
+from parse_input_parameters import parse_simulation_inputs, parse_plot_estimates, parse_plot_uncertainty, parse_plot_measurements
 from kalman_simulation import simulation
 
 
@@ -26,7 +26,7 @@ def create_plot():
                                                   parsed_input_data['measurements'],
                                                   parsed_input_data['measurement_cov_matrix'],
                                                   parsed_input_data['state_transition_matrix'])
-    fig = plot_output(parse_plot_inputs(output_state), parse_plot_uncertainty(output_uncertainty),
+    fig = plot_output(parse_plot_estimates(output_state), parse_plot_uncertainty(output_uncertainty),
                       parse_plot_measurements(parsed_input_data['measurements']))
 
     # return the plot to the client

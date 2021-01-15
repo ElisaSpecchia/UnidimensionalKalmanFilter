@@ -17,7 +17,7 @@ def parse_simulation_inputs(parameters_object):
     return input_data
 
 
-def parse_plot_inputs(estimate_array):
+def parse_plot_estimates(estimate_array):
     """parse the output of the simulation,
     in order to create the plot.
     Define an array of two arrays:
