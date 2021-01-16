@@ -39,7 +39,7 @@ All required parameters are:
 * Measurements of Position and Velocity, 
 * Measurement Covariance Matrix.
 
-(Details on Kalman filter operation and parameter settings can be found in the following documentation).
+(Details on Kalman filter and parameter settings can be found in the following documentation).
 
 The number of measurements can vary from a minimum of 5: the (+) button adds more measurements
 while the (-) button removes them. To restore the default parameters, press the reset button.
