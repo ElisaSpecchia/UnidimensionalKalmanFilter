@@ -40,6 +40,6 @@ def plot_output(plot_estimates, plot_uncertainties, plot_measurements):
     axs[3].set_title('Velocity Uncertainty', fontsize=15, x=0.5, y=0.99)
 
     axs[3].set_xticks(time_steps)
-    axs[3].set_xlabel('steps', fontsize=14)
+    axs[3].set_xlabel('Time steps', fontsize=14)
 
     return fig

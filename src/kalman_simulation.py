@@ -1,5 +1,5 @@
 import numpy as np
-import kalman_equations_matrix_form as kalman
+import kalman_equations as kalman
 from matrix_utilities import is_symmetric
 
 observation_matrix = np.array([[1, 0], [0, 1]])

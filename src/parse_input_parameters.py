@@ -37,6 +37,7 @@ def parse_plot_uncertainty(uncertainty_array):
     Define a list formed of two lists:
     put all position uncertainties (standard deviation) in the first list,
     put all velocity uncertainties (standard deviation) in the second list."""
+
     plot_uncertainties = []
     for i in range(len(uncertainty_array)):
         for j in range(len(uncertainty_array[i])):
@@ -53,6 +54,7 @@ def parse_plot_measurements(estimate_array):
     Define a list formed of two lists:
     put all position measurements in the first list,
     put all velocity measurements in the second list."""
+
     plot_inputs = []
     for i in range(len(estimate_array)):
         for j in range(len(estimate_array[i])):
