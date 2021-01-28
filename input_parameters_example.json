@@ -1,0 +1,58 @@
+{
+  "initial_state_guess": [
+    0,
+    4
+  ],
+  "initial_state_cov_matrix": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "state_transition_matrix": [
+    [
+      1,
+      10
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "measurement_cov_matrix": [
+    [
+      100,
+      0
+    ],
+    [
+      0,
+      100
+    ]
+  ],
+  "measurements": [
+    [
+      49,
+      3.8
+    ],
+    [
+      71,
+      4.6
+    ],
+    [
+      128,
+      3.4
+    ],
+    [
+      173,
+      3.8
+    ],
+    [
+      209,
+      4.2
+    ]
+  ]
+}
