@@ -52,6 +52,7 @@ It is important to make sure that none of the boxes are empty, before starting t
 <img src="image_equations/output_example.png" />
 
 
+### Input parameters as json
 Input parameters can also be provided as json, using the following keys:
 * initial_state_guess
 * initial_state_cov_matrix
