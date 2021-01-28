@@ -2,6 +2,14 @@ import numpy as np
 
 
 def parse_simulation_inputs(parameters_object):
+    """
+    Input:
+    parameters_object = json containing all input parameters needed for the Kalman simulation.
+
+    Define a numpy array for each of the input parameters.
+    Return a dictionary containing all inputs.
+    """
+
     initial_state_guess = np.array(parameters_object['initial_state_guess'])
     initial_state_cov_matrix = np.array(parameters_object['initial_state_cov_matrix'])
     state_transition_matrix = np.array(parameters_object['state_transition_matrix'])
@@ -19,7 +27,12 @@ def parse_simulation_inputs(parameters_object):
 
 def parse_plot_estimates(estimate_array):
     """Parse the output of the simulation, to create the plot.
-    Define a list formed of two lists:
+
+    Input:
+    estimate array = array containing the estimated state vectors for
+                    each time step in the simulation.
+
+    Return a list formed of two lists:
     put all position estimates in the first list,
     put all velocity estimates in the second list."""
 
@@ -34,7 +47,12 @@ def parse_plot_estimates(estimate_array):
 
 def parse_plot_uncertainty(uncertainty_array):
     """Parse the output of the simulation, to create the plot.
-    Define a list formed of two lists:
+
+    Input:
+    uncertainty_array = array containing the state covariance matrices for each time step
+                        in the simulation.
+
+    Return a list formed of two lists:
     put all position uncertainties (standard deviation) in the first list,
     put all velocity uncertainties (standard deviation) in the second list."""
 
