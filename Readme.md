@@ -49,6 +49,26 @@ the estimated position and velocity and their uncertainties.
 
 It is important to make sure that none of the boxes are empty, before starting the simulation. 
 
+<img src="image_equations/output_example.png" />
+
+
+Input parameters can also be provided as json, using the following keys:
+* initial_state_guess
+* initial_state_cov_matrix
+* state_transition_matrix
+* measurement_cov_matrix
+* measurements
+
+
+An example of the structure can be found in this repository, in the file named 
+input_parameters_example.json.
+
+To execute the simulation, use the following command:
+```shell 
+python src/main_json.py input_parameters_example.json
+```
+
+
 ### Tests
 
 To run the test suite, use the following command:
