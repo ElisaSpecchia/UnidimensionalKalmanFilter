@@ -6,6 +6,8 @@ from kalman_simulation import simulation
 from visualization import plot_output
 
 
+# run the simulation using input parameters as json and return a plot
+
 with open(sys.argv[1]) as json_data:
     input_data = json.load(json_data)
 
