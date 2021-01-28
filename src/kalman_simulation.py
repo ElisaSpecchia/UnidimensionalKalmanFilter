@@ -8,12 +8,11 @@ observation_matrix = np.array([[1, 0], [0, 1]])
 def extrapolate_initial_state_guess(initial_state_guess, state_transition_matrix):
     """Implementation of state extrapolation equation, using the initial state guess as input.
 
-    Input parameters:
-    initial_state_guess = initial guess of all estimated states of the system,
-    state_transition_matrix = matrix for the implementation of the dynamic model.
+    :param initial_state_guess: initial guess of all estimated states of the system,
+    :param state_transition_matrix: matrix for the implementation of the dynamic model.
 
-    Returns:
-    next_state_vector = state vector at the next time step, before the first update process occurs."""
+    :returns: next_state_vector: state vector at the next time step, before the first
+              update process occurs."""
 
     next_state_vector = kalman.state_extrapolation(
         initial_state_guess.T, state_transition_matrix)
@@ -24,13 +23,12 @@ def extrapolate_initial_state_cov_matrix(initial_state_cov_matrix, state_transit
     """" Implementation of covariance extrapolation equation, using the initial
     state covariance matrix as input.
 
-    Input parameters:
-    initial_state_cov_matrix = state covariance matrix (defining the uncertainty in each
-                               of the initial guess estimates),
-    state_transition_matrix = matrix for the implementation of the dynamic model.
+    :param initial_state_cov_matrix: state covariance matrix (defining the uncertainty in each
+                                     of the initial guess estimates),
+    :param state_transition_matrix: matrix for the implementation of the dynamic model.
 
-    Returns:
-    next_state_cov_matrix = state covariance matrix at the next time step, before the first update process occurs.
+    :returns: next_state_cov_matrix: state covariance matrix at the next time step,
+              before the first update process occurs.
     """
 
     next_state_cov_matrix = kalman.covariance_extrapolation(
@@ -46,21 +44,24 @@ def simulation(initial_state_guess, initial_state_cov_matrix, measurements, meas
     3. implementation of the propagation step,
     4. repetition of the process (update of the propagated step and so on).
 
-    Input parameters:
-    initial_state_guess = initial guess of all estimated states of the system,
-    initial_state_cov_matrix = state covariance matrix (defining the uncertainty in each
-                               of the initial guess estimates),
-    measurements = array containing the measurement vectors for each time step
-                   (the measurement vector stores all measured states),
-    measurement_cov_matrix = covariance matrix defining the uncertainty in each of the measurements,
-    state_transition_matrix = matrix for the implementation of the dynamic model.
-
     Returns:
     output_simulation = array containing the estimated state vectors for each time step
                         (the state vector includes all estimated states of the system),
     output_simulation_uncertainty = array containing the state covariance matrices for each time step
                         (the state covariance matrix defines the uncertainty in each
-                         of the estimated states)."""
+                         of the estimated states).
+
+
+    :param initial_state_guess: initial guess of all estimated states of the system,
+    :param initial_state_cov_matrix: state covariance matrix (defining the uncertainty in each
+                               of the initial guess estimates),
+    :param measurements: array containing the measurement vectors for each time step
+                   (the measurement vector stores all measured states),
+    :param measurement_cov_matrix: covariance matrix defining the uncertainty in each of the measurements,
+    :param state_transition_matrix: matrix for the implementation of the dynamic model.
+
+    Returns:
+    :returns: array of estimated state vectors, array of state covariance matrices"""
 
     output_simulation = []
     output_simulation_uncertainty = []
