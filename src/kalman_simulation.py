@@ -60,7 +60,6 @@ def simulation(initial_state_guess, initial_state_cov_matrix, measurements, meas
     :param measurement_cov_matrix: covariance matrix defining the uncertainty in each of the measurements,
     :param state_transition_matrix: matrix for the implementation of the dynamic model.
 
-    Returns:
     :returns: array of estimated state vectors, array of state covariance matrices"""
 
     output_simulation = []
